@@ -13,7 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,10 +34,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/FinanceApp" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -44,6 +49,9 @@
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\FinanceApp" />
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\venv" />
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\templates\FinanceApp" />
     </key>
   </component>
   <component name="RunManager">
@@ -83,6 +91,7 @@
       <workItem from="1675184743385" duration="1005000" />
       <workItem from="1675185772841" duration="4015000" />
       <workItem from="1675190722215" duration="43000" />
+      <workItem from="1675246803026" duration="7852000" />
     </task>
     <servers />
   </component>
