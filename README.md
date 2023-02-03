@@ -15,3 +15,17 @@ Project uses the following technoloies:
 - Exporting Data to PDF,  and all other formats
 - Preview PDFs
 
+## Running the project
+
+* clone the repository from GitHub
+
+Using the console naviagte to the cloned repository and run the following commands:
+
+* pip install virtualenv
+* virtualenv “name as you like”
+* source env/bin/activate
+* pip install -r requirements.txt
+* python manage.py runserver
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
