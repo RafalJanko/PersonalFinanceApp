@@ -2,7 +2,21 @@ const usernameField=document.querySelector('#usernamefield');
 const feedbackArea=document.querySelector('.invalid-feedback');
 const emailField=document.querySelector('#emailField');
 const emailfeedbackArea=document.querySelector('.emailfeedbackArea');
+const passwordfield=document.querySelector('#passwordfield');
 const usernameSuccessOutput=document.querySelector('.usernameSuccessOutput');
+const ShowPasswordToggle=document.querySelector('.ShowPasswordToggle');
+
+const handleToggleInput=(e)=> {
+    if (ShowPasswordToggle.textContent === 'SHOW') {
+        ShowPasswordToggle.textContent = 'HIDE';
+        passwordfield.setAttribute('type', 'text');
+    } else {
+        ShowPasswordToggle.textContent = 'SHOW';
+        passwordfield.setAttribute('type', 'password');
+    }
+};
+
+ShowPasswordToggle.addEventListener('click',handleToggleInput);
 
 emailField.addEventListener('keyup', (e)=>{
 const emailVal=e.target.value;

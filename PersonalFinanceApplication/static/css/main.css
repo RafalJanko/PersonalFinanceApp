@@ -1,3 +1,11 @@
+.ShowPasswordToggle{
+cursor: pointer;
+    transition: all;
+
+}
+.ShowPasswordToggle:hover{
+transform: scale(1.2);
+}
 .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
