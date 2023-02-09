@@ -27,5 +27,8 @@ Using the console naviagte to the cloned repository and run the following comman
 * pip install -r requirements.txt
 * python manage.py runserver
 
+## Project status
+- Work in progress
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
