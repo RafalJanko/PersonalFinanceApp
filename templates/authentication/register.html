@@ -11,21 +11,17 @@
             <div class="card-title py-3 justify-content-center">
              <h4>Register for a free account</h4>
          </div>
-
-
-
-
              <form action="{% url 'register' %}" method="post">
                  {% csrf_token %}
                  {% include 'partials/_messages.html' %}
              <div class="form-group">
-                    <input type="text" name="username" placeholder="Username" class="form-control form-control-sm" id="usernamefield">
+                    <input type="text" name="username" placeholder="Username" class="form-control form-control-sm" id="usernamefield" value="{{ fieldValues.username }}">
                 </div>
                  <div class="invalid-feedback invalid-feedback" style="display:none">
                  </div>
                  <p class="text-sm text-success usernameSuccessOutput"></p>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" class="form-control form-select-sm" id="emailField">
+                    <input type="email" name="email" placeholder="Email" class="form-control form-select-sm" id="emailField" value="{{ fieldValues.email }}">
                 </div>
 
                   <div class="emailfeedbackArea invalid-feedback" style="display:none">
@@ -34,7 +30,7 @@
                  <div class="form-group">
                     <input type="password" name="password" placeholder="Password" class="form-control form-select-sm" id="passwordfield">
                 </div>
-                 <div class="d-grid"><input type="submit" value="Register" class="btn btn- btn-primary"></div>
+                 <div class="d-grid"><input type="submit" value="Register" class="btn btn- btn-primary submit-btn"></div>
                  <small class="float-sm-end ShowPasswordToggle">SHOW</small>
              </form>
 
