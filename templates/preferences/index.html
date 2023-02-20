@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3">
+ <h5>Preferred currency</h5>
+
+<div class="input-group">
+  <select class="custom-select" id="inputGroupSelect04">
+      {% for item in currencies %}
+    <option selected>{{ item.name }} - {{ item.value }}</option>
+      {% endfor %}
+
+  </select>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+
+
+</div>
+</div>
+    </hr>
+
+{% endblock %}
