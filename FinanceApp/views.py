@@ -9,8 +9,11 @@ from django.shortcuts import redirect
 @login_required(login_url='/authentication/login')
 def index(request):
     categories = Category.objects.all()
+    expenses = Expense.objects.filter(owner=request.user)
+    context = {'categories': categories,
+               'expenses': expenses}
 
-    return render(request, 'FinanceApp/index.html', {'categories':categories})
+    return render(request, 'FinanceApp/index.html', context)
 
 def add_expense(request):
     categories = Category.objects.all()
