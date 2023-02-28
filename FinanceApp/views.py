@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -10,8 +11,12 @@ from django.shortcuts import redirect
 def index(request):
     categories = Category.objects.all()
     expenses = Expense.objects.filter(owner=request.user)
+    paginator = Paginator(expenses, 6)
+    page_number = request.GET.get('page')
+    page_obj = Paginator.get_page(paginator, page_number)
     context = {'categories': categories,
-               'expenses': expenses}
+               'expenses': expenses,
+               'page_obj': page_obj}
 
     return render(request, 'FinanceApp/index.html', context)
 
