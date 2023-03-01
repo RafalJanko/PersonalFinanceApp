@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -27,6 +27,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="2L6HcV0dFax0vv8TvMPnZAHHSf7" />
   <component name="ProjectViewState">
@@ -114,6 +117,7 @@
       <workItem from="1677098380835" duration="2755000" />
       <workItem from="1677499081370" duration="1053000" />
       <workItem from="1677605061719" duration="1331000" />
+      <workItem from="1677668872007" duration="8946000" />
     </task>
     <servers />
   </component>
