@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Category, Expense
+from userpreferences.models import UserPreference
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
@@ -26,9 +27,11 @@ def index(request):
     paginator = Paginator(expenses, 6)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator, page_number)
+    currency = UserPreference.objects.get(user=request.user).currency
     context = {'categories': categories,
                'expenses': expenses,
-               'page_obj': page_obj}
+               'page_obj': page_obj,
+               'currency': currency}
 
     return render(request, 'FinanceApp/index.html', context)
 
