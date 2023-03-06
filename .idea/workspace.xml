@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -120,6 +120,7 @@
       <workItem from="1677668872007" duration="8946000" />
       <workItem from="1677748482406" duration="2692000" />
       <workItem from="1677837704217" duration="3749000" />
+      <workItem from="1678116974103" duration="3536000" />
     </task>
     <servers />
   </component>
