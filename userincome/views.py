@@ -22,6 +22,8 @@ def index(request):
 
     return render(request, 'income/index.html', context)
 
+
+@login_required(login_url='/authentication/login')
 def add_income(request):
     sources = Source.objects.all()
     context = {'sources': sources,
@@ -47,3 +49,43 @@ def add_income(request):
         UserIncome.objects.create(owner=request.user, amount=amount, date=date, source=source, description=description, )
         messages.success(request, 'Record saved successfully')
         return redirect('income')
+
+
+@login_required(login_url='/authentication/login')
+def income_edit(request, id):
+    income = UserIncome.objects.get(pk=id)
+    sources = Source.objects.all()
+    context = {'income':income,
+               'values':income,
+               'sources': sources}
+    if request.method == 'GET':
+        return render(request, 'income/edit_income.html', context)
+    if request.method == 'POST':
+        amount = request.POST['amount']
+        if not amount:
+            messages.error(request, 'Amount is required')
+            return render(request, 'income/edit_income.html', context)
+
+        description = request.POST['description']
+        date = request.POST['income_date']
+        source = request.POST['source']
+
+        if not description:
+            messages.error(request, 'Description is required')
+            return render(request, 'income/edit_income.html', context)
+
+        income.owner = request.user
+        income.amount = amount
+        income.date = date
+        income.source = source
+        income.save()
+        messages.success(request, 'Income updated successfully')
+        return redirect('income')
+
+
+@login_required(login_url='/authentication/login')
+def delete_income(request, id):
+    income = UserIncome.objects.get(pk=id)
+    income.delete(income)
+    messages.success(request, 'Income removed successfully!')
+    return redirect('income')

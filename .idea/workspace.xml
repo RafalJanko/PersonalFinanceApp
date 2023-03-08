@@ -15,8 +15,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -121,6 +121,7 @@
       <workItem from="1677748482406" duration="2692000" />
       <workItem from="1677837704217" duration="3749000" />
       <workItem from="1678116974103" duration="3536000" />
+      <workItem from="1678276907712" duration="1771000" />
     </task>
     <servers />
   </component>
