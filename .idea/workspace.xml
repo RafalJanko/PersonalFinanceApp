@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="CSS File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -55,6 +55,7 @@
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\PersonalFinanceApplication\static\img" />
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\templates\partials" />
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\templates\FinanceApp" />
     </key>
@@ -123,6 +124,7 @@
       <workItem from="1678116974103" duration="3536000" />
       <workItem from="1678276907712" duration="1771000" />
       <workItem from="1678354151174" duration="3044000" />
+      <workItem from="1678442237998" duration="3931000" />
     </task>
     <servers />
   </component>
