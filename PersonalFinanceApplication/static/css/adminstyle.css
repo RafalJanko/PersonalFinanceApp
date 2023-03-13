@@ -11,3 +11,18 @@
     background: #727272;
     color: #ffffff;
 }
+
+.login.submit_row {
+    padding: 0px !important;
+}
+
+input[type="submit"],
+input[type="button"],
+.submit_row input {
+    width: 100%;
+    background: #727272;
+}
+
+.module h2, .module caption, .inline-group h2 {
+  background: #727272;
+}
