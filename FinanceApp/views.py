@@ -10,6 +10,13 @@ from django.http import JsonResponse, HttpResponse
 import datetime
 import csv
 import xlwt
+from django.template.loader import render_to_string
+from weasyprint import HTML
+from django.db.models import Sum
+import tempfile
+import os
+
+os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 # Create your views here.
 
 def search_expenses(request):
@@ -163,4 +170,22 @@ def export_excel(request):
              ws.write(row_num, col_num, str(row[col_num]), font_style)
 
     wb.save(response)
+    return response
+
+def export_pdf(request):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; attachment; filename=Expenses' + str(datetime.datetime.now()) + '.pdf'
+    response['Content-Transfer-Encoding'] = 'binary'
+    expenses = Expense.objects.filter(owner=request.user)
+    sum = expenses.aggregate(Sum('amount'))
+    html_string = render_to_string('FinanceApp/pdf-output.html', {'expenses': expenses, 'total': sum['amount__sum']})
+    html = HTML(string=html_string)
+    result = html.write_pdf()
+
+    with tempfile.NamedTemporaryFile(delete=True) as output:
+        output.write(result)
+        output.flush()
+        output = open(output.name, 'r')
+        response.write(output.read())
+
     return response
