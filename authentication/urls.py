@@ -1,15 +1,9 @@
 from django.urls import path
-from .views import (
-    RegistrationView,
-    UsernameValidationView,
-    EmailValidationView,
-    VerificationView,
-    LoginView,
-    LogoutView,
-    RequestPasswordResetEmail,
-    CompletePasswordReset,
-)
 from django.views.decorators.csrf import csrf_exempt
+
+from .views import (CompletePasswordReset, EmailValidationView, LoginView,
+                    LogoutView, RegistrationView, RequestPasswordResetEmail,
+                    UsernameValidationView, VerificationView)
 
 urlpatterns = [
     path("register", RegistrationView.as_view(), name="register"),

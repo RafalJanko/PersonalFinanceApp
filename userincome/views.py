@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from .models import Source, UserIncome
-from userpreferences.models import UserPreference
-from django.core.paginator import Paginator
-from django.contrib import messages
-from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
 import json
+
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import JsonResponse
+from django.shortcuts import redirect, render
+
+from userpreferences.models import UserPreference
+
+from .models import Source, UserIncome
 
 # Create your views here.
 

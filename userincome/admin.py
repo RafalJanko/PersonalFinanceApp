@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import UserIncome, Source
+
+from .models import Source, UserIncome
 
 # Register your models here.
 admin.site.register(UserIncome)

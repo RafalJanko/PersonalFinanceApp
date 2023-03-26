@@ -1,20 +1,22 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from .models import Category, Expense
-from userpreferences.models import UserPreference
-from django.contrib import messages
-from django.shortcuts import redirect
-from django.core.paginator import Paginator
-import json
-from django.http import JsonResponse, HttpResponse
-import datetime
 import csv
+import datetime
+import json
+import os
+import tempfile
+
 import xlwt
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.db.models import Sum
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from weasyprint import HTML
-from django.db.models import Sum
-import tempfile
-import os
+
+from userpreferences.models import UserPreference
+
+from .models import Category, Expense
 
 os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 # Create your views here.

@@ -1,9 +1,11 @@
-from django.shortcuts import render
-import os
 import json
+import os
+
 from django.conf import settings
-from .models import UserPreference
 from django.contrib import messages
+from django.shortcuts import render
+
+from .models import UserPreference
 
 # Create your views here.
 
