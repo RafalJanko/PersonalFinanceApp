@@ -17,6 +17,7 @@ from weasyprint import HTML
 from userpreferences.models import UserPreference
 
 from .models import Category, Expense
+from userincome.models import UserIncome
 
 os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 # Create your views here.
@@ -153,6 +154,35 @@ def expense_category_summary(request):
 
 def stats_view(request):
     return render(request, "FinanceApp/stats.html")
+
+def income_source_summary(request):
+    todays_date = datetime.date.today()
+    six_months_ago = todays_date - datetime.timedelta(days=30 * 6)
+    incomes = UserIncome.objects.filter(
+        owner=request.user, date__gte=six_months_ago, date__lte=todays_date
+    )
+    final_rep = {}
+
+    def get_source(income):
+        return income.source
+
+    category_list = list(set(map(get_source, incomes)))
+
+    def get_income_source_amount(source):
+        amount = 0
+        filtered_by_category = incomes.filter(source=source)
+        for item in filtered_by_category:
+            amount += item.amount
+        return amount
+
+    for x in incomes:
+        for y in category_list:
+            final_rep[y] = get_income_source_amount(y)
+
+    return JsonResponse({"income_source_data": final_rep}, safe=False)
+
+def income_stats_view(request):
+    return render(request, "FinanceApp/income stats.html")
 
 
 def export_csv(request):
