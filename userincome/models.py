@@ -5,6 +5,12 @@ from django.utils.timezone import now
 # Create your models here.
 
 
+""" 
+Income model related to User.
+Returning respresentation in the form of a str.
+Ordered by the newest date.
+"""
+
 class UserIncome(models.Model):
     amount = models.FloatField()
     date = models.DateField(default=now)
@@ -18,6 +24,9 @@ class UserIncome(models.Model):
     class Meta:
         ordering: ["-date"]
 
+"""
+Source model.
+"""
 
 class Source(models.Model):
     name = models.CharField(max_length=255)

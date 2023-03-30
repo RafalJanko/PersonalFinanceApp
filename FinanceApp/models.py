@@ -4,6 +4,11 @@ from django.utils.timezone import now
 
 # Create your models here.
 
+""" 
+Expense model related to User.
+Returning respresentation in the form of a str.
+Ordered by the newest date.
+"""
 
 class Expense(models.Model):
     amount = models.FloatField()
@@ -17,6 +22,12 @@ class Expense(models.Model):
 
     class Meta:
         ordering: ["-date"]
+
+
+"""
+Category model.
+Verbose - changes it's plural form in the Django admin page.
+"""
 
 
 class Category(models.Model):

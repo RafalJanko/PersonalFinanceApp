@@ -19,6 +19,11 @@ from .utils import token_generator
 # Create your views here.
 
 
+"""
+Email threading class, created to speed up sending out emails by the app.
+"""
+
+
 class EmailThread(threading.Thread):
     def __init__(self, email):
         self.email = email
@@ -26,6 +31,11 @@ class EmailThread(threading.Thread):
 
     def run(self):
         self.email.send(fail_silently=False)
+
+
+"""
+Email validation class for the login and registration views.
+"""
 
 
 class EmailValidationView(View):
@@ -41,6 +51,11 @@ class EmailValidationView(View):
                 status=409,
             )
         return JsonResponse({"email_valid": True})
+
+
+"""
+Username validation for both login and registration views.
+"""
 
 
 class UsernameValidationView(View):
@@ -63,6 +78,11 @@ class UsernameValidationView(View):
                 status=409,
             )
         return JsonResponse({"username_valid": True})
+
+
+"""
+Simple registration view - saves users to DB
+"""
 
 
 class RegistrationView(View):
@@ -120,6 +140,11 @@ class RegistrationView(View):
         return render(request, "authentication/register.html")
 
 
+"""
+Class designed to check if user is already activated in DB through a sent email.
+"""
+
+
 class VerificationView(View):
     def get(self, request, uidb64, token):
 
@@ -141,6 +166,11 @@ class VerificationView(View):
             pass
 
         return redirect("login")
+
+
+"""
+Login view.
+"""
 
 
 class LoginView(View):
@@ -173,11 +203,20 @@ class LoginView(View):
         return render(request, "authentication/login.html")
 
 
+"""
+Simple logout view.
+"""
+
 class LogoutView(View):
     def post(self, request):
         auth.logout(request)
         messages.success(request, "You have been logged out!")
         return redirect("login")
+
+
+"""
+Class designed to send out an email to reset one's password.
+"""
 
 
 class RequestPasswordResetEmail(View):
@@ -221,6 +260,11 @@ class RequestPasswordResetEmail(View):
         messages.success(request, "We have sent you an email to reset your password")
 
         return render(request, "authentication/reset-password.html")
+
+
+"""
+Completing the Password reset function 
+"""
 
 
 class CompletePasswordReset(View):
