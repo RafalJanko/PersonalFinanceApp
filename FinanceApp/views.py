@@ -23,6 +23,11 @@ os.add_dll_directory(r"C:\Program Files\GTK3-Runtime Win64\bin")
 # Create your views here.
 
 
+"""
+Ajax search option to look through the expenses of a logged in user
+"""
+
+
 def search_expenses(request):
     if request.method == "POST":
         search_str = json.loads(request.body).get("searchText")
@@ -36,6 +41,11 @@ def search_expenses(request):
         )
         data = expenses.values()
         return JsonResponse(list(data), safe=False)
+
+
+"""
+The "main" page that lists all expenses and allows you to add and edit expenses.
+"""
 
 
 @login_required(login_url="/authentication/login")
@@ -54,6 +64,11 @@ def index(request):
     }
 
     return render(request, "FinanceApp/index.html", context)
+
+
+"""
+The view that allows a logged in user to add an expense.
+"""
 
 
 def add_expense(request):
@@ -88,6 +103,11 @@ def add_expense(request):
         return redirect("expenses")
 
 
+"""
+The view that allows a logged in user to edit an expense.
+"""
+
+
 def expense_edit(request, id):
     expense = Expense.objects.get(pk=id)
     categories = Category.objects.all()
@@ -118,11 +138,21 @@ def expense_edit(request, id):
         return redirect("expenses")
 
 
+"""
+The view that allows a logged in user to delete an expense.
+"""
+
+
 def delete_expense(request, id):
     expense = Expense.objects.get(pk=id)
     expense.delete()
     messages.success(request, "Expense removed successfully!")
     return redirect("expenses")
+
+
+"""
+View to group expenses and count their total amount.
+"""
 
 
 def expense_category_summary(request):
@@ -152,8 +182,19 @@ def expense_category_summary(request):
     return JsonResponse({"expense_category_data": final_rep}, safe=False)
 
 
+"""
+The view that allows to view a graph summarize the expenses with a js graph.
+"""
+
+
 def stats_view(request):
     return render(request, "FinanceApp/stats.html")
+
+
+"""
+View to group incomes and count their total amount.
+"""
+
 
 def income_source_summary(request):
     todays_date = datetime.date.today()
@@ -181,8 +222,19 @@ def income_source_summary(request):
 
     return JsonResponse({"income_source_data": final_rep}, safe=False)
 
+
+"""
+The view that allows to view a graph summarize the incomes with a js graph.
+"""
+
+
 def income_stats_view(request):
     return render(request, "FinanceApp/income stats.html")
+
+
+"""
+The view that allows a logged user to export the expenses to a CSV.
+"""
 
 
 def export_csv(request):
@@ -202,6 +254,11 @@ def export_csv(request):
         )
 
     return response
+
+
+"""
+The view that allows a logged user to export the expenses to an Excel file.
+"""
 
 
 def export_excel(request):
@@ -231,6 +288,11 @@ def export_excel(request):
 
     wb.save(response)
     return response
+
+
+"""
+The view that allows a logged user to export the expenses to a PDF.
+"""
 
 
 def export_pdf(request):

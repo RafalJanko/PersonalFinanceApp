@@ -13,6 +13,11 @@ from .models import Source, UserIncome
 # Create your views here.
 
 
+"""
+The view that allows a logged user to search through the added incomes with ajax
+"""
+
+
 def search_income(request):
 
     if request.method == "POST":
@@ -35,6 +40,11 @@ def search_income(request):
         return JsonResponse(list(data), safe=False)
 
 
+"""
+The main view that lists incomes, add them, edit them and delete them
+"""
+
+
 @login_required(login_url="/authentication/login")
 def index(request):
     sources = Source.objects.all()
@@ -46,6 +56,11 @@ def index(request):
     context = {"income": income, "page_obj": page_obj, "currency": currency}
 
     return render(request, "income/index.html", context)
+
+
+"""
+The view that allows a logged user add an income item
+"""
 
 
 @login_required(login_url="/authentication/login")
@@ -81,6 +96,11 @@ def add_income(request):
         return redirect("income")
 
 
+"""
+The view that allows a logged user edit an added income item
+"""
+
+
 @login_required(login_url="/authentication/login")
 def income_edit(request, id):
     income = UserIncome.objects.get(pk=id)
@@ -110,6 +130,11 @@ def income_edit(request, id):
         messages.success(request, "Record updated  successfully")
 
         return redirect("income")
+
+
+"""
+The view that allows a logged user to delete and added income item
+"""
 
 
 def delete_income(request, id):
