@@ -60,7 +60,47 @@
       <recent name="C:\Users\rafal\OneDrive\Pulpit\Projekty\PersonalFinanceApplication\templates\FinanceApp" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: authentication.tests.SigninTest">
+  <component name="RunManager" selected="Django tests.Test: FinanceApp.tests.UserModelTestCase">
+    <configuration name="Test: FinanceApp.tests.BaseUserModelTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="PersonalFinanceApplication" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="FinanceApp.tests.BaseUserModelTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: FinanceApp.tests.UserModelTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="PersonalFinanceApplication" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="FinanceApp.tests.UserModelTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: authentication.tests.SigninTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="PersonalFinanceApplication" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,6 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: FinanceApp.tests.UserModelTestCase" />
+        <item itemvalue="Django tests.Test: FinanceApp.tests.BaseUserModelTestCase" />
         <item itemvalue="Django tests.Test: authentication.tests.SigninTest" />
       </list>
     </recent_temporary>
@@ -165,6 +207,7 @@
       <workItem from="1680182803315" duration="942000" />
       <workItem from="1680267281809" duration="1290000" />
       <workItem from="1680544050505" duration="276000" />
+      <workItem from="1680636374947" duration="405000" />
     </task>
     <servers />
   </component>
@@ -172,6 +215,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/settings_py$Test__FinanceApp_tests_BaseUserModelTestCase.coverage" NAME="Test: FinanceApp.tests.BaseUserModelTestCase Coverage Results" MODIFIED="1680636773506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/settings_py$Test__FinanceApp_tests_UserModelTestCase.coverage" NAME="Test: FinanceApp.tests.UserModelTestCase Coverage Results" MODIFIED="1680636795637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/settings_py$Test__authentication_tests_SigninTest.coverage" NAME="Test: authentication.tests.SigninTest Coverage Results" MODIFIED="1680544271208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
